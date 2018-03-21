@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+*
+{
+    box-sizing: border-box;
+    font-family: Open Sans;
+}
+
+html, body
+{
+    margin: 0;
+    padding: 0 0 10px 0;
+    background-color: #EEE;
+    --b-shadow: 0 0 3px 2px rgba( 0,0,0,0.2 );
+    --b-shadow-hover: 0 0 10px 2px rgba( 0,0,0,0.3 );
+    --main-color: #3F51B5;
+    --secondary-color: #303F9F;
+}
+
+.dropdown-menu
+{
+    padding: 0;
+    padding-left: 10px;
+    margin: 0;
+    width: 100%;
+    background-color: #FFF;
+    box-shadow: var( --b-shadow-hover );
+    position: relative;
+    z-index: 10;
+}
+
+.dropdown-menu ul
+{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.dropdown-menu > li
+{
+    display: inline-block;
+    padding: 10px;
+    position: relative;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s all;
+}
+
+.dropdown-menu > li:hover
+{
+    background-color: #DDD;
+}
+
+.dropdown-menu > li.dropdown-menu-item > ul
+{
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 200px;
+    background-color: #FFF;
+    box-shadow: var( --b-shadow-hover );
+    display: none;
+}
+
+.dropdown-btn
+{
+    display: block;
+    padding: 10px;
+    font-size: 11px;
+    transition: 0.3s all;
+}
+
+li.dropdown-menu-item > ul > li:hover,
+li.dropdown-submenu-item:hover
+{
+    background-color: #DDD;
+}
+
+.dropdown-menu > li.dropdown-menu-item:hover > ul
+{
+    display: block;
+}
+
+.dropdown-submenu
+{
+    position: relative;
+}
+
+.dropdown-submenu > a::after
+{
+    content: '►';
+    font-size: 8px;
+    position: absolute;
+    right: 10px;
+    margin-top: 2px;
+    color: #555;
+}
+
+.dropdown-submenu > ul
+{
+    display: none;
+    position: absolute;
+    left: 100%;
+    background-color: #FFF;
+    top: 0;
+    width: 200px;
+    box-shadow: var( --b-shadow-hover );
+}
+
+.dropdown-submenu:hover > ul
+{
+    display: block;
+}
+
+.text-box
+{
+    display: block;
+    font-size: 13px;
+    padding: 10px;
+    border: none;
+    width: 400px;
+    margin-top: 10px;
+    margin-left: 10px;
+    box-shadow: var( --b-shadow );
+    resize: none;
+    border-bottom: 3px solid #555;
+    transition: 0.3s all;
+}
+
+.text-box:focus
+{
+    box-shadow: var( --b-shadow-hover );
+    border-color: var( --main-color );
+}
+
+.buttons, .switches
+{
+    padding-left: 10px;
+}
+
+.buttons button
+{
+    display: inline-block;
+    background-color: var( --main-color );
+    color: #FFF;
+    padding: 5px 10px;
+    border: none;
+    margin-top: 10px;
+    box-shadow: var( --b-shadow );
+    transition: 0.3s all;
+}
+
+.buttons button:hover
+{
+    background-color: var( --secondary-color );
+    box-shadow: var( --b-shadow-hover );
+}
+
+.switches
+{
+    margin-top: 10px;
+}
+
+.switch
+{
+    display: none;
+}
+
+.switch + label
+{
+    color: rgba(0,0,0,0.6);
+    padding-left: 25px;
+    font-size: 13px;
+    position: relative;
+    transition: 0.3s all;
+}
+
+.switch + label::before
+{
+    content: '';
+    display: block;
+    background-color: rgba(144,144,144,0.5);
+    height: 6px;
+    width: 20px;
+    border-radius: 50px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin-top: -3px;
+    transition: 0.3s all;
+}
+
+.switch + label::after
+{
+    content: '';
+    display: block;
+    position: absolute;
+    height: 12px;
+    width: 12px;
+    left: 0;
+    background-color: #555;
+    border-radius: 50px;
+    top: 50%;
+    margin-top: -6px;
+    transition: 0.3s all;
+}
+
+.switch:checked + label, .switch:hover + label
+{
+    color: #34495e;
+}
+
+.switch:checked + label::before
+{
+    box-shadow: 0 0 0 100px var( --main-color ) inset;
+    opacity: 0.5;
+}
+
+.switch:checked + label::after
+{
+    background-color: var( --main-color );
+    left: 10px;
+}
+
+.hidden
+{
+    display: none;
+}

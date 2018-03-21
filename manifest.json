@@ -1,0 +1,28 @@
+{
+
+	"manifest_version": 2,
+	"name": "Quantum Hackbar",
+	"version": "1.0.1",
+
+	"description": "Hackbar port for the WebExtensions API to work with Google Chrome",
+
+	"icons": {
+		"48": "icons/icon.png"
+	},
+
+	"devtools_page": "devtools/devtools.html",
+
+	"background": {
+		"scripts": [
+		  "background.js"
+		]
+	  },
+
+	"permissions": [
+		"<all_urls>",
+		"activeTab",
+		"webRequest",
+		"webRequestBlocking"
+	]
+
+}
